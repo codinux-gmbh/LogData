@@ -84,6 +84,6 @@ kotlin {
 }
 
 
-//if (File(projectDir, "../gradle/scripts/publish-codinux.gradle.kts").exists()) {
-//    apply(from = "../gradle/scripts/publish-codinux.gradle.kts")
-//}
+if (File(projectDir, "../gradle/scripts/publish-codinux.gradle.kts").exists()) {
+    apply(from = "../gradle/scripts/publish-codinux.gradle.kts")
+}

@@ -6,4 +6,9 @@ allprojects {
     repositories {
         mavenCentral()
     }
+
+
+    ext["sourceCodeRepositoryBaseUrl"] = "github.com/codinux-gmbh/LogData"
+
+    ext["projectDescription"] = "Basic model for Loggers like LogLevel, LogEvent, ..."
 }
