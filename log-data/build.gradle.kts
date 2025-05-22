@@ -77,7 +77,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation("net.dankito.datetime:kmp-datetime:$kmpDateTimeVersion")
+            api("net.dankito.datetime:kmp-datetime:$kmpDateTimeVersion")
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
