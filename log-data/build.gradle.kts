@@ -73,9 +73,11 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
 
+    val kmpDateTimeVersion: String by project
+
     sourceSets {
         commonMain.dependencies {
-
+            implementation("net.dankito.datetime:kmp-datetime:$kmpDateTimeVersion")
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
