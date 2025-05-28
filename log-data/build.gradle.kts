@@ -11,11 +11,6 @@ kotlin {
     compilerOptions {
         // suppresses compiler warning: [EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING] 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta.
         freeCompilerArgs.add("-Xexpect-actual-classes")
-
-        // avoid "variable has been optimised out" in debugging mode
-        if (System.getProperty("idea.debugger.dispatch.addr") != null) {
-            freeCompilerArgs.add("-Xdebug")
-        }
     }
 
 
@@ -25,36 +20,10 @@ kotlin {
 
     js(IR) {
         binaries.library()
-
-        browser {
-            testTask {
-                useKarma {
-                    useChromeHeadless()
-                    useFirefoxHeadless()
-                }
-            }
-        }
-
-        nodejs {
-            testTask {
-                useMocha {
-                    timeout = "20s" // Mocha times out after 2 s, which is too short for bufferExceeded() test
-                }
-            }
-        }
     }
 
     @OptIn(ExperimentalWasmDsl::class)
-    wasmJs {
-        browser {
-            testTask {
-                useKarma {
-                    useChromeHeadless()
-                    useFirefoxHeadless()
-                }
-            }
-        }
-    }
+    wasmJs()
 
 
     linuxX64()
@@ -78,9 +47,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api("net.dankito.datetime:kmp-datetime:$kmpDateTimeVersion")
-        }
-        commonTest.dependencies {
-            implementation(kotlin("test"))
         }
     }
 }
