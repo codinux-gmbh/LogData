@@ -11,7 +11,7 @@ Basic log structures like `LogLevel`, `LogEvent`, ...
 ### Gradle
 
 ```
-implementation("net.codinux.log:log-data:1.0.0")
+implementation("net.codinux.log:log-data:1.1.0")
 ```
 
 ### Maven
@@ -20,7 +20,7 @@ implementation("net.codinux.log:log-data:1.0.0")
 <dependency>
    <groupId>net.codinux.log</groupId>
    <artifactId>log-data-jvm</artifactId>
-   <version>1.0.0</version>
+   <version>1.1.0</version>
 </dependency>
 ```
 
